@@ -22,7 +22,7 @@ class ContentPage extends Component {
     return (
       <div className="ContentPage">
         <div className="ContentPage-container">
-          <div>Component Here?</div>
+          <div>Component Here</div>
           {
             this.props.path === '/' ? null : <h1>{this.props.title}</h1>
           }
