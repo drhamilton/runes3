@@ -4,6 +4,9 @@ import React, { PropTypes, Component } from 'react';
 import styles from './ContentPage.scss';
 import withStyles from '../../decorators/withStyles';
 
+import UsernameForm from '../UsernameForm';
+
+
 @withStyles(styles)
 class ContentPage extends Component {
 
@@ -22,7 +25,7 @@ class ContentPage extends Component {
     return (
       <div className="ContentPage">
         <div className="ContentPage-container">
-          <div>Component Here</div>
+          <UsernameForm />
           { this.props.path === '/' ? null : <h1>{this.props.title}</h1> }
           <div dangerouslySetInnerHTML={{__html: this.props.content || ''}} />
         </div>
