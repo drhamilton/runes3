@@ -1,35 +1,27 @@
 import React, { Component } from 'react';
 
 class UsernameForm extends Component {
-    static propTypes = {};
-    static defaultProps = {};
-    state = {};
+    state = { name: '' };
 
-    constructor() {
-      super();
-      // componentWillMount handler
+    setName = (name) => {
+        this.setState({name: name});
+        console.log('state is', this.state);
+    }
+    handleSubmit = (ev) => {
+        ev.preventDefault();
+        this.setName(ev.target[0].value);
     }
 
-    componentDidMount() {
-      // ...
-    }
-
-    componentWillUnmount() {
-      // ...
-    }
-
-    shouldComponentUpdate() {
-      // ...
-    }
-    
     render() {
+      const { name } = this.state.name;
       return (
-        <form>
-            <label>Enter your summoner username here:
-                <input type="text"></input>
-            </label>
-        </form>
-      );
+            <form onSubmit={this.handleSubmit}>
+                <label>Enter your summoner username here:
+                    <input type="text" value={name} />
+                    <input type="submit"></input>
+                </label>
+            </form>
+        );
     }
 }
 
